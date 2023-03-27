@@ -1,4 +1,3 @@
-from my_app import app
 
 from flask import Blueprint
 

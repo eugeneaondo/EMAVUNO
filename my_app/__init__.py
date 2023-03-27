@@ -1,21 +1,19 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
-
+from .config import config
 db=SQLAlchemy()
 
 def create_app():
     app = Flask(__name__)
-    app.config['SQLALCHEMY_DATABASE_URI']='sqlite:///mavuno.db'
+    app.config.from_object(
+    config['development'])
+  
 
     from my_app.products.views import product
     app.register_blueprint(product)
     
-    with app.app_context():
-        db.init_app(app)
+    
+    db.init_app(app)
 
     return app
 
-
-
-
-db.create_all()
