@@ -17,6 +17,9 @@ class Type(db.Model):
     category = db.relationship('Category', backref=db.backref('types', lazy='dynamic'))
 
 class Product(db.Model):
+
+    __name__ = 'product'
+    
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(50), nullable=False)
     alias = db.Column(db.String(50), nullable = True)
