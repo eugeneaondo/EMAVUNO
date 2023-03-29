@@ -18,7 +18,7 @@ class DevelopmentConfig(BaseConfig):
     DEBUG=True
     TESTING = True
     SQLALCHEMY_DATABASE_URI = os.environ.get('DEV_DATABASE_URL') or \
-    'sqlite:///'
+    'sqlite:///emavuno.db'
 
 
     SECRET_KEY='Secret key Development'
