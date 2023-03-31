@@ -1,5 +1,6 @@
 from my_app import db
 
+db.create_all()
 class Category(db.Model):
 
     __name__ = 'category'

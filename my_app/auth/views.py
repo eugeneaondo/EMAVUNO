@@ -7,7 +7,7 @@ from my_app import db
 auth = Blueprint('auth', __name__)
 
 
-@auth.route('/auth/register')
+@auth.route('/auth/register', methods=['GET', 'POST'])
 def register():
     form = RegisterForm()
     if form.validate_on_submit():
